@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <title>Staff Management</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div class="container">
+
+    <header>
+        <h1>Scania Spare Parts Management System</h1>
+        <p>Staff Management</p>
+    </header>
+
+    <nav>
+        <a href="index.html">🏠 Dashboard</a>
+        <a href="inventory.html" id="inventoryLink">📦 Inventory</a>
+        <a href="sales.html" id="salesLink">💰 Sales</a>
+        <a href="purchases.html" id="purchasesLink">🚚 Purchases</a>
+         <a href="payments.html" id="paymentsLink">
+        💳 Payments
+    </a>
+        <a href="reports.html" id="reportsLink">📊 Reports</a>
+        <a href="staff_management.html" id="usersLink">👥 Staff Management</a>
+        <button onclick="logout()">Logout</button>
+    </nav>
+
+    <section class="page-section">
+        <div class="section-header">
+            <h2>System Users</h2>
+            <button id="showUserForm" class="btn-primary">+ Add Staff Member</button>
+        </div>
+
+        <div id="userForm" class="form-panel" style="display:none;">
+            <h3 id="formTitle">Add Staff Member</h3>
+
+            <div class="form-grid">
+                <div class="form-group">
+                    <label>First Name</label>
+                    <input type="text" id="first_name" placeholder="First Name">
+                </div>
+                <div class="form-group">
+                    <label>Last Name</label>
+                    <input type="text" id="last_name" placeholder="Last Name">
+                </div>
+                <div class="form-group">
+                    <label>Phone</label>
+                    <input type="text" id="phone" placeholder="Phone">
+                </div>
+                <div class="form-group">
+                    <label>Email</label>
+                    <input type="email" id="email" placeholder="Email">
+                </div>
+                <div class="form-group">
+                    <label>Position</label>
+                    <input type="text" id="position" placeholder="Position">
+                </div>
+                <div class="form-group">
+                    <label>Role</label>
+                    <select id="role_id">
+                        <option value="">Select Role</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Username</label>
+                    <input type="text" id="username" placeholder="Username">
+                </div>
+                <div class="form-group" id="passwordField">
+                    <label>Password</label>
+                    <input type="password" id="password" placeholder="Password">
+                </div>
+            </div>
+
+            <label class="checkbox-label">
+                <input type="checkbox" id="is_active" checked>
+                Active
+            </label>
+
+            <div class="form-actions">
+                <button id="saveButton" class="btn-primary" onclick="saveStaff()">Save Staff Member</button>
+                <button type="button" class="btn-secondary" onclick="cancelStaffForm()">Cancel</button>
+            </div>
+        </div>
+
+        <div class="table-wrapper">
+            <table id="usersTable">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Username</th>
+                        <th>Role</th>
+                        <th>Status</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </div>
+    </section>
+
+</div>
+
+<script src="js/auth.js"></script>
+<script src="js/users.js"></script>
+
+</body>
+</html>

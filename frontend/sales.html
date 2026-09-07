@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="0">
+<title>Sales</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div class="container">
+
+<header>
+    <h1>Scania Spare Parts Management System</h1>
+    <p>Sales Management</p>
+</header>
+
+<nav>
+    <a href="index.html">🏠 Dashboard</a>
+    <a href="inventory.html" id="inventoryLink">📦 Inventory</a>
+    <a href="sales.html" id="salesLink">💰 Sales</a>
+    <a href="purchases.html" id="purchasesLink">🚚 Purchases</a>
+     <a href="payments.html" id="paymentsLink">
+        💳 Payments
+    </a>
+    <a href="reports.html" id="reportsLink">📊 Reports</a>
+    <a href="staff_management.html" id="usersLink">👥 Staff Management</a>
+    <button onclick="logout()">Logout</button>
+</nav>
+
+<section class="page-section">
+    <h2>Create Sale</h2>
+    <form id="saleForm" class="sale-form">
+        <div class="form-grid">
+            <div class="form-group">
+                <label>Customer</label>
+                <select id="customer_id" required>
+                    <option value="">Select Customer</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label>Employee</label>
+                <select id="employee_id" required>
+                    <option value="">Select Employee</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label>Payment Method</label>
+                <select id="payment_method">
+                    <option>Cash</option>
+                    <option>Mobile Money</option>
+                    <option>Bank Transfer</option>
+                    <option>Card</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label>Status</label>
+                <select id="status">
+                    <option>Completed</option>
+                    <option>Pending</option>
+                </select>
+            </div>
+        </div>
+        <button type="submit" class="btn-primary">Create Sale</button>
+    </form>
+
+    <button type="button" class="btn-secondary" onclick="showCustomerForm()">+ New Customer</button>
+
+    <div id="newCustomerForm" class="form-panel" style="display:none;">
+        <h3>Add New Customer</h3>
+        <div class="form-grid">
+            <div class="form-group">
+                <label>Customer Name</label>
+                <input type="text" id="customer_name">
+            </div>
+            <div class="form-group">
+                <label>Company Name</label>
+                <input type="text" id="company_name">
+            </div>
+            <div class="form-group">
+                <label>Phone</label>
+                <input type="text" id="phone">
+            </div>
+            <div class="form-group">
+                <label>Email</label>
+                <input type="email" id="email">
+            </div>
+            <div class="form-group">
+                <label>Address</label>
+                <textarea id="address" rows="2"></textarea>
+            </div>
+        </div>
+        <button type="button" class="btn-primary" onclick="addCustomer()">Save Customer</button>
+    </div>
+</section>
+
+<section class="page-section">
+    <h2>Add Sale Item</h2>
+    <form id="saleItemForm" class="sale-form">
+        <div class="form-grid">
+            <div class="form-group">
+                <label>Part</label>
+                <select id="part_id">
+                    <option value="">Select Part</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label>Quantity</label>
+                <input type="number" id="quantity" min="1">
+            </div>
+            <div class="form-group">
+                <label>Selling Price</label>
+                <input type="number" id="selling_price" min="0" step="0.01">
+            </div>
+            <div class="form-group">
+                <label>Discount</label>
+                <input type="number" id="discount" value="0" min="0" step="0.01">
+            </div>
+        </div>
+        <button type="submit" class="btn-primary">Add Item</button>
+    </form>
+
+    <h2>Sale Items</h2>
+    <div class="table-wrapper">
+        <table id="saleItemsTable">
+            <thead>
+                <tr>
+                    <th>Part</th>
+                    <th>Quantity</th>
+                    <th>Price</th>
+                    <th>Discount</th>
+                    <th>Subtotal</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </div>
+
+    <p class="total-display">Total: ZMW <span id="saleTotal">0.00</span></p>
+</section>
+
+</div>
+
+<script src="js/auth.js"></script>
+<script src="js/sales.js"></script>
+
+</body>
+</html>

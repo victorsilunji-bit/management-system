@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Payments Management</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+</div>
+
+<nav>
+
+    <a href="index.html">
+        🏠 Dashboard
+    </a>
+
+    <a href="inventory.html" id="inventoryLink">
+        📦 Inventory
+    </a>
+
+    <a href="sales.html" id="salesLink">
+        💰 Sales
+    </a>
+
+    <a href="purchases.html" id="purchasesLink">
+        🚚 Purchases
+    </a>
+
+    <a href="payments.html" id="paymentsLink">
+        💳 Payments
+    </a>
+
+    <a href="reports.html" id="reportsLink">
+        📊 Reports
+    </a>
+
+    <a href="staff_management.html" id="usersLink">
+        👥 Staff Management
+    </a>
+
+</nav>
+
+<div class="payments-container">
+
+    <h1 class="payments-title">Payments Management</h1>
+
+    <table id="paymentsTable">
+
+        <thead>
+
+            <tr>
+
+                <th>Invoice</th>
+                <th>Customer</th>
+                <th>Total Amount</th>
+                <th>Amount Paid</th>
+                <th>Balance</th>
+                <th>Payment Status</th>
+                <th>Action</th>
+
+            </tr>
+
+        </thead>
+
+        <tbody>
+
+        </tbody>
+
+    </table>
+
+
+    <div id="paymentForm" style="display:none;">
+
+        <h2>Receive Payment</h2>
+
+        <input type="hidden" id="sale_id">
+
+        <label>Customer</label>
+        <input
+            type="text"
+            id="customer_name"
+            readonly
+        >
+
+        <label>Remaining Balance</label>
+        <input
+            type="number"
+            id="balance"
+            readonly
+        >
+
+        <label>Amount Received</label>
+        <input
+            type="number"
+            id="payment_amount"
+            placeholder="Enter amount received"
+        >
+
+        <button onclick="savePayment()">
+            Save Payment
+        </button>
+
+    </div>
+
+</div>
+
+
+
+<script src="auth.js"></script>
+<script src="payments.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+
+
+    <title>Scania Spare Parts Management System</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div class="container">
+
+    <header>
+        <h1>Scania Spare Parts Management System</h1>
+        <p>Dashboard</p>
+    </header>
+
+<div class="user-info">
+    <h3 id="welcomeUser"></h3>
+    <p id="userRole"></p>
+</div>
+<nav>
+
+<a href="index.html">
+🏠 Dashboard
+</a>
+
+<a href="inventory.html" id="inventoryLink">
+📦 Inventory
+</a>
+
+<a href="sales.html" id="salesLink">
+💰 Sales
+</a>
+
+<a href="purchases.html" id="purchasesLink">
+🚚 Purchases
+</a>
+
+ <a href="payments.html" id="paymentsLink">
+        💳 Payments
+    </a>
+
+<a href="reports.html" id="reportsLink">
+📊 Reports
+</a>
+
+<a href="staff_management.html" id="usersLink">
+👥 Staff Management
+</a>
+
+<button onclick="logout()">
+Logout
+</button>
+
+</nav>
+<section class="cards">
+
+
+    <div class="card">
+        <h3>Total Parts</h3>
+        <p id="totalParts">0</p>
+    </div>
+
+
+    <div class="card">
+        <h3>Low Stock Items</h3>
+        <p id="lowStock">0</p>
+    </div>
+
+
+    <div class="card">
+        <h3>Total Sales</h3>
+        <p id="totalSales">ZMW 0.00</p>
+    </div>
+
+
+    <div class="card">
+        <h3>Total Purchases</h3>
+        <p id="totalPurchases">0</p>
+    </div>
+
+
+    <div class="card">
+        <h3>Total Customers</h3>
+        <p id="totalCustomers">0</p>
+    </div>
+
+
+    <div class="card">
+        <h3>Total Suppliers</h3>
+        <p id="totalSuppliers">0</p>
+    </div>
+
+
+    <div class="card">
+        <h3>Today's Sales</h3>
+        <p id="todaySales">ZMW 0</p>
+    </div>
+
+
+</section>
+
+    <section class="welcome">
+
+        <h2>Welcome</h2>
+
+        <p>
+            Welcome to the Scania Spare Parts Management System.
+            Use the navigation menu above to manage inventory,
+            record sales and purchases, and generate reports.
+        </p>
+
+    </section>
+
+    <section class="recent">
+
+        <h2>Recent Inventory</h2>
+
+        <div class="table-wrapper">
+        <table id="inventoryTable">
+
+            <thead>
+
+                <tr>
+                    <th>Part Number</th>
+                    <th>Description</th>
+                    <th>Unit</
+                    <th>Selling Price</th>
+                    <th>Available Stock</th>
+                    <th>Status</th>
+                </tr>
+
+            </thead>
+
+            <tbody>
+
+            </tbody>
+
+        </table>
+        </div>
+
+    </section>
+
+</div>
+<script src="js/auth.js"></script>
+<script src="js/dashboard.js"></script>
+
+</body>
+</html>
+

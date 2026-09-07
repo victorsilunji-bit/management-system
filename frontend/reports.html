@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="0">
+<title>Reports</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div class="container">
+
+<header>
+    <h1>Scania Spare Parts Management System</h1>
+    <p>Reports Dashboard</p>
+</header>
+
+<nav>
+    <a href="index.html">🏠 Dashboard</a>
+    <a href="inventory.html" id="inventoryLink">📦 Inventory</a>
+    <a href="sales.html" id="salesLink">💰 Sales</a>
+    <a href="purchases.html" id="purchasesLink">🚚 Purchases</a>
+     <a href="payments.html" id="paymentsLink">
+        💳 Payments
+    </a>
+    <a href="reports.html" id="reportsLink">📊 Reports</a>
+    <a href="staff_management.html" id="usersLink">👥 Staff Management</a>
+    <button onclick="logout()">Logout</button>
+</nav>
+
+<section class="page-section">
+    <h2>Business Summary</h2>
+    <div class="report-cards">
+        <div class="card">
+            <h3>Total Parts</h3>
+            <p id="totalParts">0</p>
+        </div>
+        <div class="card">
+            <h3>Total Stock</h3>
+            <p id="totalStock">0</p>
+        </div>
+        <div class="card">
+            <h3>Total Sales</h3>
+            <p id="totalSales">0</p>
+        </div>
+        <div class="card">
+            <h3>Low Stock Items</h3>
+            <p id="lowStock">0</p>
+        </div>
+    </div>
+</section>
+
+<section class="page-section">
+    <h2>Low Stock Report</h2>
+    <div class="table-wrapper">
+        <table id="lowStockTable">
+            <thead>
+                <tr>
+                    <th>Part Number</th>
+                    <th>Description</th>
+                    <th>Available Stock</th>
+                    <th>Minimum Stock</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </div>
+</section>
+
+<section class="page-section">
+    <h2>Best Selling Parts</h2>
+    <div class="table-wrapper">
+        <table id="bestSellingTable">
+            <thead>
+                <tr>
+                    <th>Part Number</th>
+                    <th>Description</th>
+                    <th>Quantity Sold</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </div>
+</section>
+
+</div>
+
+<script src="js/auth.js"></script>
+<script src="js/reports.js"></script>
+
+</body>
+</html>

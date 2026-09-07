@@ -1,0 +1,244 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ 
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+
+    <title>Inventory Management</title>
+
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+
+<body>
+
+
+<div class="container">
+
+
+<header>
+
+    <h1>Scania Spare Parts Management System</h1>
+
+    <p>Inventory Management</p>
+
+</header>
+
+
+
+<nav>
+
+<a href="index.html">
+🏠 Dashboard
+</a>
+
+<a href="inventory.html" id="inventoryLink">
+📦 Inventory
+</a>
+
+<a href="sales.html" id="salesLink">
+💰 Sales
+</a>
+
+<a href="purchases.html" id="purchasesLink">
+🚚 Purchases
+</a>
+ <a href="payments.html" id="paymentsLink">
+        💳 Payments
+    </a>
+<a href="reports.html" id="reportsLink">
+📊 Reports
+</a>
+
+<a href="staff_management.html" id="usersLink">
+👥 Staff Management
+</a>
+
+<button onclick="logout()">
+Logout
+</button>
+
+</nav>
+
+
+
+<section class="inventory-controls">
+
+
+<h2>Inventory</h2>
+
+
+<input 
+type="text"
+id="searchInput"
+placeholder="Search part number or description..."
+onkeyup="searchInventory()"
+>
+
+
+
+<button onclick="loadInventory()">
+    🔄 Refresh
+</button>
+
+
+<button onclick="openAddPartForm()">
+    ➕ Add Spare Part
+</button>
+
+
+</section>
+
+<section id="addPartSection" style="display:none;">
+
+<h2>Add New Spare Part</h2>
+
+
+<label>Part Number</label>
+<input type="text" id="part_number">
+
+
+<label>Part Name</label>
+<input type="text" id="part_name">
+
+
+<label>Category ID</label>
+<input type="number" id="category_id">
+
+
+<label>Brand ID</label>
+<input type="number" id="brand_id">
+
+
+<label>Description</label>
+<input type="text" id="description">
+
+
+<label>Unit</label>
+<input type="text" id="unit">
+
+
+<label>Purchase Price</label>
+<input type="number" id="purchase_price">
+
+
+<label>Selling Price</label>
+<input type="number" id="selling_price">
+
+
+<label>Minimum Stock</label>
+<input type="number" id="minimum_stock">
+
+
+<label>Warehouse Location</label>
+<input type="text" id="warehouse_location">
+
+
+<label>Barcode</label>
+<input type="text" id="barcode">
+
+
+<button onclick="addPart()">
+Save Part
+</button>
+
+
+</section>
+
+
+<div class="table-wrapper">
+<table id="inventoryTable">
+
+
+<thead>
+
+
+<tr>
+    <th>Part Number</th>
+    <th>Description</th>
+    <th>Unit</th>
+    <th>Selling Price</th>
+    <th>Available Stock</th>
+    <th>Status</th>
+    <th>Actions</th>
+</tr>
+
+</thead>
+
+
+
+<tbody>
+
+
+</tbody>
+
+
+
+</table>
+</div>
+<!-- Edit Part Modal -->
+
+<div id="editModal" class="modal">
+
+    <div class="modal-content">
+
+        <h2>Edit Spare Part</h2>
+
+
+        <input type="hidden" id="edit_part_id">
+
+
+        <label>Part Number</label>
+        <input type="text" id="edit_part_number">
+
+
+        <label>Description</label>
+        <input type="text" id="edit_description">
+
+
+        <label>Unit</label>
+        <input type="text" id="edit_unit">
+
+
+        <label>Purchase Price</label>
+        <input type="number" id="edit_purchase_price">
+
+
+        <label>Selling Price</label>
+        <input type="number" id="edit_selling_price">
+
+
+        <label>Minimum Stock</label>
+        <input type="number" id="edit_minimum_stock">
+
+
+        <button onclick="updatePart()">
+            💾 Save Changes
+        </button>
+
+
+        <button onclick="closeEditModal()">
+            Cancel
+        </button>
+
+
+    </div>
+
+</div>
+
+</div>
+<script src="js/auth.js"></script>
+<script src="./js/inventory.js"></script>
+
+</body>
+
+
+</html>
